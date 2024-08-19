@@ -5,7 +5,7 @@
     height: 255px;
     @include small-radius;
     min-width: 335px;
-    transition: transform 1s;
+    transition: transform 1s, filter 0.3s;
 
     @media screen and (min-width: $breakpoint-desktop) {
         width: 340px;
@@ -14,6 +14,7 @@
         &:hover,
         &:focus {
             @include boxShadow;
+            filter: brightness(0.85);
         }
     }
 
@@ -22,6 +23,11 @@
         width: 100%;
         @include small-radius;
         object-fit: cover;
+        transition: filter 0.3s;
+
+        &:hover {
+            filter: brightness(0.85); // Effet d'assombrissement de l'image
+        }
     }
 
     &__layer {
