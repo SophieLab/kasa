@@ -1,13 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'; // Importer Link depuis react-router-dom
 
-export default function ErrorPage() {
-	return (
-		<div className="errorContainer">
-			<p className="errorNumber">404</p>
-			<p className="errorText">Oups! La page que vous demandez n'existe pas.</p>
-			<Link to="/" className="errorLinkHome">
-				Retourner sur la page d’accueil
-			</Link>
-		</div>
-	);
-}
+// Composant ErrorPage pour afficher une page d'erreur 404
+const ErrorPage = () => (
+    <main className="errorContainer">
+        <header>
+            <p className="errorNumber">404</p>
+        </header>
+        <section>
+            <p className="errorText">
+                Oups ! La page que vous demandez n'existe pas.
+            </p>
+        </section>
+        <footer>
+            <Link to="/" className="errorLinkHome">
+                Retourner sur la page d’accueil
+            </Link>
+        </footer>
+    </main>
+);
+
+export default ErrorPage;

@@ -1,39 +1,41 @@
-import { useState, useRef, useEffect } from "react";
-import Chevron from "../../assets/images/vectorBas.svg";
+import { useState, useRef, useLayoutEffect } from 'react'; // Importer les hooks React nécessaires
+import classNames from 'classnames'; // Utiliser la bibliothèque classnames pour gérer les classes conditionnelles
+import Chevron from '../../assets/images/vectorBas.svg'; // Importer l'image du chevron
 
-// Composant Collapse pour afficher ou masquer du contenu
-function Collapse({ aboutStyle, aboutTitle, aboutText }) {
-	const [isOpen, setIsOpen] = useState(false); // État pour contrôler l'ouverture/fermeture du collapse
-	const contentRef = useRef(null); // Référence pour obtenir la hauteur du contenu
+function Collapse({ aboutTitle, aboutText, aboutStyle }) {
+    const [isOpen, setIsOpen] = useState(false); // État pour contrôler si le collapse est ouvert ou fermé
+    const [collapseHeight, setCollapseHeight] = useState('0px'); // Hauteur du collapse
+    const collapseRef = useRef(null); // Référence pour l'élément collapse
 
-	// Fonction pour basculer l'état du collapse
-	const handleToggle = () => setIsOpen(prev => !prev);
+    const toggleCollapse = () => {
+        setIsOpen(prevState => !prevState); // Inverser l'état d'ouverture
+    };
 
-	useEffect(() => {
-		// Met à jour la hauteur du contenu lorsque le composant est monté
-		if (contentRef.current) {
-			contentRef.current.style.height = isOpen ? `${contentRef.current.scrollHeight}px` : "0px";
-		}
-	}, [isOpen]); // Dépendance sur isOpen pour mettre à jour la hauteur à chaque changement
+    useLayoutEffect(() => {
+        if (collapseRef.current) {
+            setCollapseHeight(isOpen ? `${collapseRef.current.scrollHeight}px` : '0px');
+        }
+    }, [isOpen]);
 
-	return (
-		<div className={`collapse ${aboutStyle}`}>
-			<div onClick={handleToggle} className="collapse__header">
-				<h2>{aboutTitle}</h2>
-				<img
-					className={`chevron ${isOpen ? "rotated" : ""}`}
-					src={Chevron}
-					alt="Chevron"
-				/>
-			</div>
-			<div
-				ref={contentRef}
-				className={`collapse__content ${isOpen ? "animated" : ""}`}
-			>
-				<p aria-hidden={!isOpen}>{aboutText}</p>
-			</div>
-		</div>
-	);
+    return (
+        <div className={classNames('collapse', aboutStyle)}>
+            <div onClick={toggleCollapse} className="collapse__visible">
+                <h2>{aboutTitle}</h2>
+                <img
+                    className={classNames('chevron', { rotated: isOpen })}
+                    src={Chevron}
+                    alt="chevron"
+                />
+            </div>
+            <div
+                ref={collapseRef}
+                className={classNames('collapse__toggle', { animated: isOpen })}
+                style={{ height: collapseHeight }}
+            >
+                <p aria-hidden={!isOpen}>{aboutText}</p>
+            </div>
+        </div>
+    );
 }
 
 export default Collapse;
