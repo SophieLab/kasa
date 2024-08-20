@@ -1,10 +1,15 @@
-export default function Host(props) {
-	return (
-		<aside className="host-comp">
-			<div className="host-name">{props.hostName}</div>
-			<div className="hostPicture">
-				<img src={props.hostPic} alt={props.id} />
-			</div>
-		</aside>
-	);
-}
+import React from 'react';
+// Composant Host pour afficher les informations de l'hôte
+const Host = ({ hostName, hostPic, id }) => (
+    <aside className="host-comp">
+        <div className="host-name">{hostName}</div>
+        <div className="hostPicture">
+            <img 
+                src={hostPic} 
+                alt={`Photo de ${hostName}`} 
+            />
+        </div>
+    </aside>
+);
+
+export default Host;
