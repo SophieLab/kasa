@@ -3,7 +3,7 @@
     display: flex;
     width: 335px;
     height: 255px;
-    @include small-radius;
+    @include small-radius; // Assurez-vous que la mixin small-radius est définie quelque part
     min-width: 335px;
     transition: transform 1s, filter 0.3s;
 
@@ -13,20 +13,20 @@
 
         &:hover,
         &:focus {
-            @include boxShadow;
-            filter: brightness(0.85);
+            @include boxShadow; // Assurez-vous que la mixin boxShadow est définie quelque part
+            filter: brightness(0.85); // Réduit la luminosité au survol
         }
     }
 
     & img {
-        display: flex;
+        display: block; // 'block' est généralement plus approprié pour les images
         width: 100%;
-        @include small-radius;
+        @include small-radius; // Assurez-vous que la mixin small-radius est définie quelque part
         object-fit: cover;
         transition: filter 0.3s;
 
         &:hover {
-            filter: brightness(0.85); // Effet d'assombrissement de l'image
+            filter: brightness(0.85); // Effet d'assombrissement de l'image au survol
         }
     }
 
@@ -35,16 +35,16 @@
         align-items: center;
         position: absolute;
         bottom: 0;
-        background: $linear-cards;
-        @include WH-full;
-        @include small-radius;
+        background: $linear-cards; // Assurez-vous que la variable $linear-cards est définie
+        @include WH-full; // Assurez-vous que la mixin WH-full est définie
+        @include small-radius; // Assurez-vous que la mixin small-radius est définie
     }
 
     &__title {
         display: flex;
         align-items: flex-end;
         position: absolute;
-        @include font(18px, 500);
+        @include font(18px, 500); // Assurez-vous que la mixin font est définie
         color: #f1f1f1;
         left: 5.88%;
         right: 5.88%;
@@ -58,7 +58,7 @@
     justify-content: center;
     width: 100%;
     gap: 20px;
-    @include small-radius;
+    @include small-radius; // Assurez-vous que la mixin small-radius est définie
     margin: 22px 0;
     flex-wrap: wrap;
 
@@ -66,11 +66,11 @@
         gap: 50px;
         padding: 5% 1%;
         background-color: #f7f7f7;
-        @include big-radius;
+        @include big-radius; // Assurez-vous que la mixin big-radius est définie
         margin: 43px 0;
     }
 }
 
 .link_card_logement {
-    text-decoration: none;
+    text-decoration: none; // Assurez-vous que les liens n'ont pas de décoration
 }
