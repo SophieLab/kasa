@@ -1,49 +1,64 @@
 import { useState } from "react";
-import left from "../../assets/images/vector-left.svg";
-import right from "../../assets/images/vector-right.svg";
+import leftArrow from "../../assets/images/vector-left.svg";
+import rightArrow from "../../assets/images/vector-right.svg";
 
-export default function Carrousel({ slides }) {
-	const [current, setCurrent] = useState(0); //je définis l'index du premier slide à 0
-	const length = slides.length; // longueur du tableau de slides
+// Composant Carrousel pour afficher des diapositives d'images
+function Carrousel({ slides }) {
+	// État pour suivre l'index de la diapositive actuellement affichée
+	const [currentSlide, setCurrentSlide] = useState(0);
 
-	const nextSlide = () => {
-		setCurrent(current === length - 1 ? 0 : current + 1); // on repart au premier slide quand on arrive au dernier
+	// Nombre total de diapositives
+	const totalSlides = slides.length;
+
+	// Fonction pour passer à la diapositive suivante
+	const goToNextSlide = () => {
+		// Si nous sommes à la dernière diapositive, revenir à la première ; sinon, passer à la suivante
+		setCurrentSlide(currentSlide === totalSlides - 1 ? 0 : currentSlide + 1);
 	};
-	const prevSlide = () => {
-		setCurrent(current === 0 ? length - 1 : current - 1); // on repart au dernier slide quand on est au premier
+
+	// Fonction pour passer à la diapositive précédente
+	const goToPreviousSlide = () => {
+		// Si nous sommes à la première diapositive, revenir à la dernière ; sinon, passer à la précédente
+		setCurrentSlide(currentSlide === 0 ? totalSlides - 1 : currentSlide - 1);
 	};
 
 	return (
 		<section id="carrousel-container">
-			{length > 1 && (
+			{/* Afficher les flèches de navigation seulement si plus d'une diapositive est présente */}
+			{totalSlides > 1 && (
 				<img
-					src={left} //Affichage des flèches seulement si length > 1
-					alt="gauche"
-					onClick={prevSlide}
-					className="leftArrow"
+					src={leftArrow} // Image pour la flèche gauche
+					alt="Flèche gauche"
+					onClick={goToPreviousSlide} // Fonction pour aller à la diapositive précédente
+					className="leftArrow" // Classe pour la flèche gauche
 				/>
 			)}
-			{length > 1 && (
+			{totalSlides > 1 && (
 				<img
-					src={right}
-					alt="droite"
-					onClick={nextSlide}
-					className="rightArrow"
+					src={rightArrow} // Image pour la flèche droite
+					alt="Flèche droite"
+					onClick={goToNextSlide} // Fonction pour aller à la diapositive suivante
+					className="rightArrow" // Classe pour la flèche droite
 				/>
 			)}
+
+			{/* Itération sur les diapositives pour les afficher */}
 			{slides.map((slide, index) => (
 				<div
-					key={index} // mise en place du slider avec affichage conditionnel et opacity=1 quand le slide en cours vaut l'index
+					key={index} // Clé unique pour chaque diapositive
 					className={
-						current === index
-							? "slider bl-msk wh-msk active-anim"
-							: "slider bl-msk wh-msk"
+						// Classe pour la diapositive active et inactives
+						currentSlide === index
+							? "slider bl-msk wh-msk active-anim" // Classe pour la diapositive active
+							: "slider bl-msk wh-msk" // Classe pour les autres diapositives
 					}
 				>
-					{index === current && <img src={slide} alt="appartement à louer" />}
-					{index === current && (
+					{/* Afficher l'image de la diapositive uniquement si elle est active */}
+					{index === currentSlide && <img src={slide} alt="Diapositive" />}
+					{/* Afficher le numéro de la diapositive active et le total */}
+					{index === currentSlide && (
 						<span className="slider__number">
-							{current + 1}/{length}
+							{currentSlide + 1}/{totalSlides}
 						</span>
 					)}
 				</div>
@@ -51,3 +66,5 @@ export default function Carrousel({ slides }) {
 		</section>
 	);
 }
+
+export default Carrousel;
