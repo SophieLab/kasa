@@ -1,6 +1,6 @@
-import { useState, useRef, useLayoutEffect } from 'react'; // Importer les hooks React nécessaires
+import { useState, useRef, useLayoutEffect } from 'react';
 import classNames from 'classnames'; // Utiliser la bibliothèque classnames pour gérer les classes conditionnelles
-import Chevron from '../../assets/images/vectorBas.svg'; // Importer l'image du chevron
+import Chevron from '../../assets/images/vectorBas.svg';
 
 function Collapse({ aboutTitle, aboutText, aboutStyle }) {
     const [isOpen, setIsOpen] = useState(false); // État pour contrôler si le collapse est ouvert ou fermé

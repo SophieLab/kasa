@@ -6,7 +6,7 @@ const Host = ({ hostName, hostPic, id }) => (
         <div className="hostPicture">
             <img 
                 src={hostPic} 
-                alt={`Photo de ${hostName}`} 
+                alt={hostName} 
             />
         </div>
     </aside>

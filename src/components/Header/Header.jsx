@@ -1,5 +1,5 @@
-import logo from '../../assets/images/LOGO.svg'; // Importer l'image du logo
-import Nav from '../Nav/Nav'; // Importer le composant Nav
+import logo from '../../assets/images/LOGO.svg';
+import Nav from '../Nav/Nav';
 
 const Header = () => (
     <header className="headerWrap">
