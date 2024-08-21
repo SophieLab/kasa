@@ -1,14 +1,14 @@
 import { useState, useRef, useLayoutEffect } from 'react';
-import classNames from 'classnames'; // Utiliser la bibliothèque classnames pour gérer les classes conditionnelles
+import classNames from 'classnames';
 import Chevron from '../../assets/images/vectorBas.svg';
 
 function Collapse({ aboutTitle, aboutText, aboutStyle }) {
-    const [isOpen, setIsOpen] = useState(false); // État pour contrôler si le collapse est ouvert ou fermé
-    const [collapseHeight, setCollapseHeight] = useState('0px'); // Hauteur du collapse
-    const collapseRef = useRef(null); // Référence pour l'élément collapse
+    const [isOpen, setIsOpen] = useState(false);
+    const [collapseHeight, setCollapseHeight] = useState('0px');
+    const collapseRef = useRef(null);
 
     const toggleCollapse = () => {
-        setIsOpen(prevState => !prevState); // Inverser l'état d'ouverture
+        setIsOpen(prevState => !prevState);
     };
 
     useLayoutEffect(() => {

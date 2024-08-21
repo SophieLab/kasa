@@ -3,8 +3,7 @@
     display: flex;
     width: 335px;
     height: 255px;
-    @include small-radius; // Assurez-vous que la mixin small-radius est définie quelque part
-    min-width: 335px;
+    @include small-radius;
     transition: transform 1s, filter 0.3s;
 
     @media screen and (min-width: $breakpoint-desktop) {
@@ -13,20 +12,20 @@
 
         &:hover,
         &:focus {
-            @include boxShadow; // Assurez-vous que la mixin boxShadow est définie quelque part
-            filter: brightness(0.85); // Réduit la luminosité au survol
+            @include boxShadow;
+            filter: brightness(0.85);
         }
     }
 
     & img {
-        display: block; // 'block' est généralement plus approprié pour les images
+        display: block;
         width: 100%;
-        @include small-radius; // Assurez-vous que la mixin small-radius est définie quelque part
+        @include small-radius;
         object-fit: cover;
         transition: filter 0.3s;
 
         &:hover {
-            filter: brightness(0.85); // Effet d'assombrissement de l'image au survol
+            filter: brightness(0.85);
         }
     }
 
@@ -35,16 +34,16 @@
         align-items: center;
         position: absolute;
         bottom: 0;
-        background: $linear-cards; // Assurez-vous que la variable $linear-cards est définie
-        @include WH-full; // Assurez-vous que la mixin WH-full est définie
-        @include small-radius; // Assurez-vous que la mixin small-radius est définie
+        background: $linear-cards;
+        @include WH-full;
+        @include small-radius;
     }
 
     &__title {
         display: flex;
         align-items: flex-end;
         position: absolute;
-        @include font(18px, 500); // Assurez-vous que la mixin font est définie
+        @include font(18px, 500);
         color: #f1f1f1;
         left: 5.88%;
         right: 5.88%;
