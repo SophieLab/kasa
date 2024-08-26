@@ -1,8 +1,12 @@
 import React from "react";
 
+// Définition du composant fonctionnel Banner
 const Banner = ({ type, text }) => {
+  // Si `type` est égal à "about", on utilise "banner aboutBackground".
+  // Sinon, on utilise "banner banner-container".
   const bannerClass =
     type === "about" ? "banner aboutBackground" : "banner banner-container";
+
 
   return (
     <div className={bannerClass}>

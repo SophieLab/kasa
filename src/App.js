@@ -1,4 +1,7 @@
+// Importation des modules nécessaires depuis 'react-router-dom' pour gérer la navigation entre les pages
 import { Routes, Route } from "react-router-dom";
+
+// Importation des composants et des pages utilisés dans l'application
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Header from "./components/Header/Header";

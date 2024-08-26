@@ -1,4 +1,5 @@
 import React from 'react';
+
 // Composant Host pour afficher les informations de l'hôte
 const Host = ({ hostName, hostPic, id }) => (
     <aside className="host-comp">

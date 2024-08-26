@@ -12,19 +12,16 @@ function Carrousel({ slides }) {
 
 	// Fonction pour passer à la diapositive suivante
 	const goToNextSlide = () => {
-		// Si nous sommes à la dernière diapositive, revenir à la première ; sinon, passer à la suivante
 		setCurrentSlide(currentSlide === totalSlides - 1 ? 0 : currentSlide + 1);
 	};
 
 	// Fonction pour passer à la diapositive précédente
 	const goToPreviousSlide = () => {
-		// Si nous sommes à la première diapositive, revenir à la dernière ; sinon, passer à la précédente
 		setCurrentSlide(currentSlide === 0 ? totalSlides - 1 : currentSlide - 1);
 	};
 
 	return (
 		<section id="carrousel-container">
-			{/* Afficher les flèches de navigation seulement si plus d'une diapositive est présente */}
 			{totalSlides > 1 && (
 				<img
 					src={leftArrow} // Image pour la flèche gauche
@@ -42,7 +39,6 @@ function Carrousel({ slides }) {
 				/>
 			)}
 
-			{/* Itération sur les diapositives pour les afficher */}
 			{slides.map((slide, index) => (
 				<div
 					key={index} // Clé unique pour chaque diapositive
@@ -53,9 +49,7 @@ function Carrousel({ slides }) {
 							: "slider bl-msk wh-msk" // Classe pour les autres diapositives
 					}
 				>
-					{/* Afficher l'image de la diapositive uniquement si elle est active */}
 					{index === currentSlide && <img src={slide} alt="Diapositive" />}
-					{/* Afficher le numéro de la diapositive active et le total */}
 					{index === currentSlide && (
 						<span className="slider__number">
 							{currentSlide + 1}/{totalSlides}

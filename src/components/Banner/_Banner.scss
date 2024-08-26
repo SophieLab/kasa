@@ -1,18 +1,16 @@
-/* Styles communs pour la bannière de base */
 .banner {
 	width: 100%;
 	height: 223px;
 	@include flex-center;
 	@include small-radius;
 	margin-top: 20px;
-  
+
 	@media screen and (min-width: $breakpoint-desktop) {
-	  @include big-radius;
+		@include big-radius;
 	}
-  }
-  
-  /* Styles spécifiques pour la bannière "container" */
-  .banner-container {
+}
+
+.banner-container {
 	position: relative;
 	height: 111px;
 	@include flex-banner;
@@ -20,48 +18,45 @@
 	background-size: cover;
 	background-position: center;
 	@include small-radius;
-  
+
 	@media screen and (min-width: $breakpoint-desktop) {
-	  height: 223px;
-	  @include flex-banner;
-	  @include big-radius;
-	}
-  
-	/* Overlay sombre pour rendre la bannière plus sombre */
-	&::before {
-	  content: '';
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  bottom: 0;
-	  background-color: rgba(0, 0, 0, 0.5);
-	  z-index: 1;
-	  @include small-radius;
-  
-	  @media screen and (min-width: $breakpoint-desktop) {
+		height: 223px;
+		@include flex-banner;
 		@include big-radius;
-	  }
 	}
-  }
-  
-  /* Styles pour la bannière "about" */
-  .aboutBackground {
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+		@include small-radius;
+
+		@media screen and (min-width: $breakpoint-desktop) {
+			@include big-radius;
+		}
+	}
+}
+
+.aboutBackground {
 	background: $about-background-mobile;
 	width: 100%;
 	height: 223px;
 	@include small-radius;
 	background-size: cover;
 	background-position: center;
-  
+
 	@media screen and (min-width: $breakpoint-desktop) {
-	  background: $about-background;
-	  @include big-radius;
+		background: $about-background;
+		@include big-radius;
 	}
-  }
-  
-  /* Conteneur pour le texte à l'intérieur de la bannière */
-  .banner-text-container {
+}
+
+.banner-text-container {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -69,32 +64,29 @@
 	align-items: center;
 	justify-content: center;
 	z-index: 2;
-  }
-  
-  /* Styles pour le texte dans la bannière */
-  .banner-text {
+}
+
+.banner-text {
 	position: absolute;
 	top: 28.04%;
 	left: 5.6%;
 	right: 32.53%;
-	bottom: auto;
-	font-size: 5vw;
+	bottom: 80.05%;
+	font-size: 24px;
 	font-weight: 500;
-	line-height: 1.2;
+	line-height: 100%;
 	color: $tertiary-color;
-	max-width: 90%;
-	white-space: normal;
-	height: auto; 
-  
+	width: 217px;
+	height: 48px;
+
 	@media screen and (min-width: $breakpoint-desktop) {
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  bottom: 0;
-	  @include flex-center;
-	  @include WH-full;
-	  @include font(48px, 500);
-	  @include big-radius;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		@include flex-center;
+		@include WH-full;
+		@include font(48px, 500);
+		@include big-radius;
 	}
-  }
-  
+}

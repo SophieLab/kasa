@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; // Importer Link depuis react-router-dom
+import { Link } from 'react-router-dom';
 
 // Composant ErrorPage pour afficher une page d'erreur 404
 const ErrorPage = () => (

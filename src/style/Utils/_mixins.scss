@@ -1,18 +1,22 @@
+// Ddéfinir la position et la largeur d'un élément avec des valeurs prédéfinies
 @mixin body-position {
     max-width: $wmax;
     min-width: $wmin;
     margin: auto;
 }
 
+// Appliquer une ombre portée à un élément
 @mixin boxShadow {
     box-shadow: rgba(0, 0, 0, 0.2) 0 0 22px 6px;
 }
 
+// Définir la largeur et la hauteur à 100% d'un élément
 @mixin WH-full {
     width: 100%;
     height: 100%;
 }
 
+// Appliquer une taille de police, un style et un poids à un élément avec alignement à droite
 @mixin font-right($size) {
     font-size: $size;
     font-style: normal;
@@ -21,6 +25,7 @@
     line-height: 142.6%;
 }
 
+// Appliquer une taille de police, un style et un poids à un élément
 @mixin font($size, $weight) {
     font-size: ($size);
     font-style: normal;
@@ -28,6 +33,7 @@
     line-height: 142.6%;
 }
 
+// Appliquer un arrière-plan avec des propriétés de fond spécifiques
 @mixin bkgrd($background) {
     background: $background;
     background-blend-mode: darken;
@@ -35,24 +41,28 @@
     background-size: cover;
 }
 
+// Centrer les éléments dans un conteneur flex
 @mixin flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+// Disposer les éléments en colonne avec un centrage vertical
 @mixin flex-column {
-    display: flex;
+    diplay: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+// Aligner les éléments à la fin du conteneur flex
 @mixin flex-end {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
+// Styliser un conteneur avec un arrière-plan et un centrage flex
 @mixin flex-banner {
     position: relative;
     @include flex-center;
@@ -61,14 +71,17 @@
     margin-top: 20px;
 }
 
+// Appliquer un rayon de bordure petit
 @mixin small-radius {
     border-radius: 10px;
 }
 
+// Appliquer un rayon de bordure élevé
 @mixin big-radius {
     border-radius: 25px;
 }
 
+// Styliser un bouton de flèche droite avec des propriétés responsives
 @mixin rightArrow-style {
     display: flex;
     position: absolute;
@@ -86,6 +99,7 @@
     }
 }
 
+// Styliser un bouton de flèche gauche avec des propriétés responsives
 @mixin leftArrow-style {
     display: flex;
     position: absolute;

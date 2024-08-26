@@ -15,7 +15,7 @@ export default function FicheLogement() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await fetch("/logements.json"); // Utilisation de fetch
+                const res = await fetch("/logements.json");
                 if (!res.ok) throw new Error("Erreur lors de la récupération des données"); // Gestion des erreurs si la réponse n'est pas OK
 
                 const data = await res.json(); // Conversion de la réponse en JSON
@@ -32,7 +32,6 @@ export default function FicheLogement() {
         };
 
         getData();
-        // eslint-disable-next-line
     }, []); // array vide du useEffect pour ne lancer qu'une seule fois
 
     const slidePics = pickedAppart && pickedAppart.pictures;

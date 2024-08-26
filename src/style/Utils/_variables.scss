@@ -1,16 +1,19 @@
-$primary-color: #ff6060;
-$secondary-color: #f7f7f7;
-$tertiary-color: #FFFFFF;
+// Couleurs principales
+$primary-color: #ff6060; // Couleur principale
+$secondary-color: #f7f7f7; // Couleur secondaire
+$tertiary-color: #FFFFFF; // Couleur tertiaire
 
-$footer-color: #000000;
-$background-color: rgba(0, 0, 0, 0.3);
-$linear-cards: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+// Couleurs et arrière-plans
+$footer-color: #000000; // Couleur du pied de page
+$background-color: rgba(0, 0, 0, 0.3); // Couleur de fond avec transparence
+$linear-cards: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%); // Dégradé pour les cartes
 
-$about-background: $background-color url(../../assets/images/about-background.png);
-$about-background-mobile: $background-color url(../../assets/images/mobile-about-background.png);
-$banner-background: $background-color url(../../assets/images/background-banner.png);
+// Arrière-plans d'images
+$about-background: $background-color url(../../assets/images/about-background.png); // Arrière-plan pour "about"
+$about-background-mobile: $background-color url(../../assets/images/mobile-about-background.png); // Arrière-plan mobile pour "about"
+$banner-background: $background-color url(../../assets/images/background-banner.png); // Arrière-plan pour la bannière
 
+// breakpoint
 $breakpoint-desktop: 769px;
-
-$wmin: 375px;
-$wmax: 768px;
+$wmin: 375px; // Largeur minimale
+$wmax: 768px; // Largeur maximale

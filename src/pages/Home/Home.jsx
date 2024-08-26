@@ -9,7 +9,7 @@ export default function Home() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await fetch("/logements.json");  
+				const res = await fetch("/logements.json");
 				if (!res.ok) throw new Error("Erreur lors de la récupération des données");  // Gestion des erreurs
 
 				const jsonData = await res.json();  // Conversion de la réponse en JSON

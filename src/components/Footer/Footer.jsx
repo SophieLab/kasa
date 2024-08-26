@@ -1,4 +1,4 @@
-import logo from '../../assets/images/logo-footer.svg'; // Importer l'image du logo
+import logo from '../../assets/images/logo-footer.svg';
 
 
 

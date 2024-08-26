@@ -1,20 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+// Application des styles globaux
 * {
 	box-sizing: border-box;
 	font-family: "Montserrat", sans-serif;
 }
 
+// Styles pour l'élément <body>
 body {
 	@include body-position;
-
 
 	@media (min-width: $breakpoint-desktop) {
 		max-width: 100%;
 	}
-
 }
 
+// Styles pour l'élément <main>
 main {
 	margin: 5%;
 
@@ -23,26 +24,31 @@ main {
 	}
 }
 
+// Classe pour appliquer une couleur de texte
 .redFont {
 	color: $primary-color;
 }
 
+// Styles pour le conteneur de fiche
 .fiche-container {
 	@include flex-center;
 	flex-direction: column;
 }
 
+// Styles pour le conteneur de titre
 .title-container {
 	display: flex;
 	flex-direction: column;
 }
 
+// Styles pour l'élément avec la classe 'bl-msk'
 .bl-msk {
 	background: $background-color;
 	mix-blend-mode: darken;
 	@include big-radius;
 }
 
+// Styles pour l'élément avec la classe 'wh-msk'
 .wh-msk {
 	background: $secondary-color;
 	@include small-radius;
