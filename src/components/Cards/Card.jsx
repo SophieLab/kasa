@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Composant Card : Affiche une carte de location avec une couverture et un titre
+// Composant Card : Affiche une card pour un logement avec une couverture et un titre
 const Card = ({ cover, title }) => (
     <article className="card-logement">
         <img src={cover} alt="location" />

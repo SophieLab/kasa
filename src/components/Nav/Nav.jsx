@@ -13,7 +13,7 @@ function Nav() {
 				to="/about" 
 				className={({ isActive }) => "nav-header_link-about" + (isActive ? " active" : "")}
 			>
-				A Propos
+				À Propos
 			</NavLink>
 		</nav>
 	);
